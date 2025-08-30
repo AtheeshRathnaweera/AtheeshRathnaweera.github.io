@@ -1,0 +1,37 @@
+/* Import Poppins font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Tailwind base */
+@import "tailwindcss";
+
+/* Flowbite plugin */
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+
+/* Theme variables */
+@theme {
+  --font-sans: "Poppins", "ui-sans-serif", "system-ui", "sans-serif";
+  --font-body: "Poppins", "ui-sans-serif", "system-ui", "sans-serif";
+  --font-mono: "ui-monospace", "SFMono-Regular", "Menlo", "monospace";
+
+  /* Main colors */
+  --color-bg: #121212;
+  --color-text: #ffffff;
+  --color-text-secondary: #e0e0e0;
+  --color-accent: #0ea5e9;
+}
+
+/* Apply global styles */
+body {
+  @apply bg-[var(--color-bg)] text-[var(--color-text)] font-sans;
+}
+
+/* Optional: headings use body font and white by default */
+/* h1, h2, h3, h4, h5, h6 {
+  @apply font-body text-[var(--color-text)];
+} */
+
+/* Links */
+/* a {
+  @apply text-[var(--color-accent)] hover:underline;
+} */
