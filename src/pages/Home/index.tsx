@@ -1,11 +1,11 @@
+import { AboutSection, HeroSection } from "./_components";
+
 const Home = () => {
   return (
-    <div
-      className="h-300 bg-red-50"
-      style={{ background: "var(--color-bg)", color: "var(--color-text)" }}
-    >
-      Home Page
-    </div>
+    <>
+      <HeroSection />
+      <AboutSection />
+    </>
   );
 };
 
