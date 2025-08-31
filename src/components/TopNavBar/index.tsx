@@ -5,9 +5,19 @@ import {
   NavbarLink,
   NavbarToggle,
 } from "flowbite-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+const navLinks = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#services", label: "Services" },
+  { href: "#pricing", label: "Pricing" },
+  { href: "#contact", label: "Contact" },
+];
 
 const TopNavBar = () => {
+  const location = useLocation();
+
   return (
     <Navbar
       fluid
@@ -27,15 +37,18 @@ const TopNavBar = () => {
       </NavbarBrand>
       <NavbarToggle />
       <NavbarCollapse>
-        <NavbarLink href="#" active>
-          Home
-        </NavbarLink>
-        <NavbarLink as={Link} href="#">
-          About
-        </NavbarLink>
-        <NavbarLink href="#">Services</NavbarLink>
-        <NavbarLink href="#">Pricing</NavbarLink>
-        <NavbarLink href="#">Contact</NavbarLink>
+        {navLinks.map((link) => (
+          <NavbarLink
+            key={link.href}
+            href={link.href}
+            active={
+              (location.hash === "" && link.href === "#home") ||
+              location.hash === link.href
+            }
+          >
+            {link.label}
+          </NavbarLink>
+        ))}
       </NavbarCollapse>
     </Navbar>
   );
