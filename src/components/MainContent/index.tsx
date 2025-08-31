@@ -4,9 +4,8 @@ const MainContent = () => (
   <main
     style={{
       flex: 1,
-      paddingTop: "75px",
-      paddingLeft: "80px",
-      paddingRight: "80px",
+      paddingLeft: "10%",
+      paddingRight: "10%",
       minHeight: "100vh",
     }}
   >
