@@ -1,22 +1,22 @@
-const Mobios = () => {
+const ThreeITeamIntl = () => {
   return (
     <div className="text-gray-500 dark:text-gray-400 w-full">
       <div className="block">
         <div className="flex items-center gap-1">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-            Software Engineering Trainee
+            Freelance Web Developer
           </h3>
           <a
-            href="https://www.mobios.lk/"
+            href="https://3iteam.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-xl text-cyan-700 dark:text-cyan-300 font-semibold hover:underline"
           >
-            @ mobiOs Pvt Ltd
+            @ 3iTeam International
           </a>
         </div>
         <span className="block text-sm text-gray-500 dark:text-gray-400 mt-1">
-          Sep 2019 - Apr 2020 · 8 mos
+          Mar 2020 - Jul 2022 · 2 yrs 5 mos
         </span>
       </div>
       <div className="mt-4">
@@ -39,6 +39,6 @@ const Mobios = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Mobios;
+export default ThreeITeamIntl;

@@ -1,22 +1,17 @@
-const Mobios = () => {
+const GreyMoose = () => {
   return (
     <div className="text-gray-500 dark:text-gray-400 w-full">
       <div className="block">
         <div className="flex items-center gap-1">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-            Software Engineering Trainee
+            Freelance Flutter Developer
           </h3>
-          <a
-            href="https://www.mobios.lk/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xl text-cyan-700 dark:text-cyan-300 font-semibold hover:underline"
-          >
-            @ mobiOs Pvt Ltd
-          </a>
+          <span className="text-xl text-cyan-700 dark:text-cyan-300 font-semibold">
+            @ Grey Moose Technologies Inc.
+          </span>
         </div>
         <span className="block text-sm text-gray-500 dark:text-gray-400 mt-1">
-          Sep 2019 - Apr 2020 · 8 mos
+          Dec 2024 - Present · 10 mos
         </span>
       </div>
       <div className="mt-4">
@@ -41,4 +36,4 @@ const Mobios = () => {
   );
 };
 
-export default Mobios;
+export default GreyMoose;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Section, SectionContent, SectionTitle } from "@/components";
-import { Mobios } from "./_components";
+import { GreyMoose, Mobios, Novigi, ThreeITeam } from "./_components";
 
 const TABS = [
   { id: "1", label: "Novigi Pty Ltd" },
@@ -37,40 +37,10 @@ const ExperienceSection = () => {
               </li>
             ))}
           </ul>
-          <div className="flex-1">
-            {activeTab === "1" && (
-              <div className="text-medium text-gray-500 dark:text-gray-400 rounded-lg w-full">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-                  First Tab
-                </h3>
-                <p className="mb-2">
-                  This is some placeholder content for the Profile tab's
-                  associated content.
-                </p>
-              </div>
-            )}
-            {activeTab === "2" && (
-              <div className="text-medium text-gray-500 dark:text-gray-400 rounded-lg w-full">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-                  Second Tab
-                </h3>
-                <p className="mb-2">
-                  This is some placeholder content for the Dashboard tab's
-                  associated content.
-                </p>
-              </div>
-            )}
-            {activeTab === "3" && (
-              <div className="text-medium text-gray-500 dark:text-gray-400 rounded-lg w-full">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-                  Settings Tab
-                </h3>
-                <p className="mb-2">
-                  This is some placeholder content for the Settings tab's
-                  associated content.
-                </p>
-              </div>
-            )}
+          <div className="flex-1 pl-4">
+            {activeTab === "1" && <Novigi />}
+            {activeTab === "2" && <GreyMoose />}
+            {activeTab === "3" && <ThreeITeam />}
             {activeTab === "4" && <Mobios />}
           </div>
         </div>
