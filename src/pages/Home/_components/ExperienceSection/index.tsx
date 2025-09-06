@@ -13,7 +13,10 @@ const ExperienceSection = () => {
   const [activeTab, setActiveTab] = useState("1");
 
   return (
-    <Section id="experience" style={{ alignItems: "start" }}>
+    <Section
+      id="experience"
+      className="mb-40 items-start"
+    >
       <SectionTitle>Where I've Worked</SectionTitle>
       <SectionContent>
         <div className="md:flex">
