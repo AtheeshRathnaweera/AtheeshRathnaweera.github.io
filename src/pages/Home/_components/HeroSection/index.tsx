@@ -15,7 +15,7 @@ const HeroSection = () => {
         Atheesh Rathnaweera.
       </h1>
       <h3
-        className="mt-4 text-2xl font-semibold dark:text-white"
+        className="mt-4 text-2xl font-semibold dark:text-white leading-relaxed"
         style={{ maxWidth: "85%" }}
       >
         I’m a{" "}
@@ -25,7 +25,7 @@ const HeroSection = () => {
         from Sri Lanka who loves building intuitive digital experiences.
       </h3>
       <p
-        className="mt-4 text-gray-500 dark:text-gray-400"
+        className="mt-4 text-gray-500 dark:text-gray-400 leading-relaxed"
         style={{ maxWidth: "60%" }}
       >
         I’m passionate about learning new technologies and writing clean,

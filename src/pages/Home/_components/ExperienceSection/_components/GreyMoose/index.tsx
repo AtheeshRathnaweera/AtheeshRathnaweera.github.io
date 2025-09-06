@@ -15,7 +15,7 @@ const GreyMoose = () => {
         </span>
       </div>
       <div className="mt-4">
-        <ul className="text-md space-y-1.5 text-gray-500 list-disc list-inside dark:text-gray-400">
+        <ul className="text-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
           <li>
             Developed and maintained web applications using React and Node.js
           </li>

@@ -7,7 +7,7 @@ const AboutSection = () => {
       <SectionTitle>About Me</SectionTitle>
       <SectionContent>
         <div className="grid grid-cols-1 sm:grid-cols-3">
-          <div className="col-span-2">
+          <div className="col-span-2 leading-relaxed">
             <p className="text-gray-500 dark:text-gray-400 mb-4">
               Hello! My name is <span className="font-semibold">Atheesh</span>{" "}
               and I love building things that live on the internet. My interest
@@ -26,7 +26,7 @@ const AboutSection = () => {
             <p className="text-gray-500 dark:text-gray-400 mb-4">
               Here are a few technologies I’ve been working with recently:
             </p>
-            <ul className="list-disc pl-6 text-gray-500 dark:text-gray-400 mb-4">
+            <ul className="list-disc pl-6 text-gray-500 dark:text-gray-400 mb-4 space-y-0.5">
               <li>JavaScript (ES6+) &amp; TypeScript</li>
               <li>React, Angular, Next.js</li>
               <li>Node.js, .NET, Spring Boot</li>

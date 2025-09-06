@@ -23,7 +23,7 @@ const Novigi = () => {
           </span>
         </div>
         <div className="mt-4">
-          <ul className="text-md space-y-1.5 text-gray-500 list-disc list-inside dark:text-gray-400">
+          <ul className="text-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
             <li>
               Developed and maintained web applications using React and Node.js
             </li>
@@ -38,10 +38,6 @@ const Novigi = () => {
             <li>
               Worked with RESTful APIs and integrated third-party services
             </li>
-            <li>
-              Assisted in troubleshooting and debugging application issues
-            </li>
-            <li>Gained experience with Agile development methodologies</li>
           </ul>
         </div>
       </div>
@@ -57,7 +53,7 @@ const Novigi = () => {
           </span>
         </div>
         <div className="mt-4">
-          <ul className="text-md space-y-1.5 text-gray-500 list-disc list-inside dark:text-gray-400">
+          <ul className="text-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
             <li>
               Developed and maintained web applications using React and Node.js
             </li>
@@ -72,10 +68,6 @@ const Novigi = () => {
             <li>
               Worked with RESTful APIs and integrated third-party services
             </li>
-            <li>
-              Assisted in troubleshooting and debugging application issues
-            </li>
-            <li>Gained experience with Agile development methodologies</li>
           </ul>
         </div>
       </div>
@@ -91,7 +83,7 @@ const Novigi = () => {
           </span>
         </div>
         <div className="mt-4">
-          <ul className="text-md space-y-1.5 text-gray-500 list-disc list-inside dark:text-gray-400">
+          <ul className="text-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
             <li>
               Developed and maintained web applications using React and Node.js
             </li>
@@ -103,13 +95,6 @@ const Novigi = () => {
               Participated in code reviews and contributed to improving code
               quality
             </li>
-            <li>
-              Worked with RESTful APIs and integrated third-party services
-            </li>
-            <li>
-              Assisted in troubleshooting and debugging application issues
-            </li>
-            <li>Gained experience with Agile development methodologies</li>
           </ul>
         </div>
       </div>

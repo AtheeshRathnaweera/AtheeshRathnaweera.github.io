@@ -10,16 +10,16 @@ interface SectionProps {
 const Section = ({ id, children, style, className = "" }: SectionProps) => (
   <section
     id={id}
-    style={{
-      background: "var(--color-bg)",
-      color: "var(--color-text)",
-      height: "100vh",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      ...style,
-    }}
-    className={className}
+    style={style}
+    className={`
+    min-h-screen
+    flex
+    flex-col
+    justify-center
+    bg-[var(--color-bg)]
+    text-[var(--color-text)]
+    ${className}
+  `}
   >
     {children}
   </section>
