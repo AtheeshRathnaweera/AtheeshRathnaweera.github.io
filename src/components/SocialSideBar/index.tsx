@@ -1,7 +1,4 @@
-import githubIcon from "@/assets/github.svg";
-import linkedinIcon from "@/assets/linkedin.svg";
-import twitterIcon from "@/assets/twitter.svg";
-import redditIcon from "@/assets/reddit.svg";
+import { githubIcon, linkedinIcon, redditIcon, twitterIcon } from "@/assets";
 
 const SocialSideBar = () => {
   return (
