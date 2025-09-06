@@ -5,6 +5,7 @@ import {
   NavbarLink,
   NavbarToggle,
 } from "flowbite-react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
@@ -17,11 +18,33 @@ const navLinks = [
 
 const TopNavBar = () => {
   const location = useLocation();
+  const [show, setShow] = useState(true);
+  const lastScrollY = useRef(window.scrollY);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY < 10) {
+        setShow(true);
+        lastScrollY.current = window.scrollY;
+        return;
+      }
+      if (window.scrollY < lastScrollY.current) {
+        setShow(true);
+      } else if (window.scrollY > lastScrollY.current) {
+        setShow(false);
+      }
+      lastScrollY.current = window.scrollY;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <Navbar
       fluid
-      className="py-6 !px-10"
+      className={`py-6 !px-10 transition-transform duration-300 ${
+        show ? "translate-y-0" : "-translate-y-full"
+      }`}
       style={{
         position: "fixed",
         width: "100%",
