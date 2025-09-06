@@ -4,3 +4,4 @@ export { default as EmailSideBar } from "./EmailSideBar";
 export { default as MainContent } from "./MainContent";
 export { default as Section } from "./Section";
 export { default as SectionTitle } from "./SectionTitle";
+export { default as SectionContent } from "./SectionContent";

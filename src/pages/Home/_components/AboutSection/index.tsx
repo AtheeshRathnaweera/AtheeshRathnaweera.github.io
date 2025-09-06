@@ -1,11 +1,11 @@
 import meImage from "@/assets/me_001.jpeg";
-import { Section, SectionTitle } from "@/components";
+import { Section, SectionContent, SectionTitle } from "@/components";
 
 const AboutSection = () => {
   return (
     <Section id="about">
       <SectionTitle>About Me</SectionTitle>
-      <div>
+      <SectionContent>
         <div className="grid grid-cols-1 sm:grid-cols-3">
           <div className="col-span-2">
             <p className="text-gray-500 dark:text-gray-400 mb-4">
@@ -51,7 +51,7 @@ const AboutSection = () => {
             />
           </div>
         </div>
-      </div>
+      </SectionContent>
     </Section>
   );
 };
