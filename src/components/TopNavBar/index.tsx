@@ -7,6 +7,7 @@ import {
 } from "flowbite-react";
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import appLogoWhite from "/app_logo_white.png";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -53,10 +54,12 @@ const TopNavBar = () => {
         background: "var(--color-bg)",
       }}
     >
-      <NavbarBrand as={Link} href="https://flowbite-react.com">
-        <span className="self-center whitespace-nowrap text-xl dark:text-white">
-          Atheesh Rathnaweera
-        </span>
+      <NavbarBrand href="#home">
+        <img
+          src={appLogoWhite}
+          alt="Atheesh Rathnaweera"
+          className="w-12/100 h-auto"
+        />
       </NavbarBrand>
       <NavbarToggle />
       <NavbarCollapse>
