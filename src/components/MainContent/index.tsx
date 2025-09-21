@@ -1,14 +1,7 @@
 import { Outlet } from "react-router-dom";
 
 const MainContent = () => (
-  <main
-    style={{
-      flex: 1,
-      paddingLeft: "10%",
-      paddingRight: "10%",
-      minHeight: "100vh",
-    }}
-  >
+  <main className="pl-20 pr-20 sm:pl-15 sm:pr-15 flex-1 min-h-screen">
     <Outlet />
   </main>
 );

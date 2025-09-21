@@ -2,90 +2,53 @@ import { githubIcon, linkedinIcon, redditIcon, twitterIcon } from "@/assets";
 
 const SocialSideBar = () => {
   return (
-    <aside
-      style={{
-        width: "80px",
-        background: "var(--color-bg)",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: "3rem 0",
-        overflow: "hidden",
-        position: "fixed",
-        left: 0,
-        height: "100vh",
-        zIndex: 10,
-        color: "#fff",
-        gap: "1.5rem",
-        justifyContent: "flex-end",
-      }}
-    >
+    <aside className="w-20 sm:w-15 bg-[var(--color-bg)] flex flex-col items-center py-12 overflow-hidden fixed left-0 h-screen z-10 text-white gap-6 justify-end">
       <a
         href="https://github.com/"
         target="_blank"
         rel="noopener noreferrer"
-        style={{ margin: "0.5rem 0" }}
+        className="my-2"
       >
         <img
           src={githubIcon}
           alt="GitHub"
-          style={{
-            width: "24px",
-            height: "24px",
-            filter: "invert(1)",
-            display: "inline-block",
-          }}
+          className="w-6 h-6 invert inline-block"
         />
       </a>
       <a
         href="https://linkedin.com/"
         target="_blank"
         rel="noopener noreferrer"
-        style={{ margin: "0.5rem 0" }}
+        className="my-2"
       >
         <img
           src={linkedinIcon}
           alt="Linkedin"
-          style={{
-            width: "24px",
-            height: "24px",
-            filter: "invert(1)",
-            display: "inline-block",
-          }}
+          className="w-6 h-6 invert inline-block"
         />
       </a>
       <a
         href="https://twitter.com/"
         target="_blank"
         rel="noopener noreferrer"
-        style={{ margin: "0.5rem 0" }}
+        className="my-2"
       >
         <img
           src={twitterIcon}
           alt="Twitter"
-          style={{
-            width: "24px",
-            height: "24px",
-            filter: "invert(1)",
-            display: "inline-block",
-          }}
+          className="w-6 h-6 invert inline-block"
         />
       </a>
       <a
         href="https://twitter.com/"
         target="_blank"
         rel="noopener noreferrer"
-        style={{ margin: "0.5rem 0" }}
+        className="my-2"
       >
         <img
           src={redditIcon}
           alt="Reddit"
-          style={{
-            width: "24px",
-            height: "24px",
-            filter: "invert(1)",
-            display: "inline-block",
-          }}
+          className="w-6 h-6 invert inline-block"
         />
       </a>
     </aside>
