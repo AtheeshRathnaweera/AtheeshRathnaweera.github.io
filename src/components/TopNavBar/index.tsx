@@ -43,14 +43,10 @@ const TopNavBar = () => {
   return (
     <Navbar
       fluid
-      className={`py-6 !px-10 transition-transform duration-300 ${
+      className={`fixed w-full z-[100] top-0 py-6 !px-10 transition-transform duration-300 ${
         show ? "translate-y-0" : "-translate-y-full"
       }`}
       style={{
-        position: "fixed",
-        width: "100%",
-        zIndex: 100,
-        top: 0,
         background: "var(--color-bg)",
       }}
     >
@@ -58,7 +54,7 @@ const TopNavBar = () => {
         <img
           src={appLogoWhite}
           alt="Atheesh Rathnaweera"
-          className="w-12/100 h-auto"
+          className="w-12/100 h-auto sm:w-10/100"
         />
       </NavbarBrand>
       <NavbarToggle />
