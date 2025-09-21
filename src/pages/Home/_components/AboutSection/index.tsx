@@ -1,4 +1,4 @@
-import meImage from "@/assets/me_001.jpeg";
+import { mePicture } from "@/assets";
 import { Section, SectionContent, SectionTitle } from "@/components";
 
 const AboutSection = () => {
@@ -36,7 +36,7 @@ const AboutSection = () => {
           </div>
           <div className="img-holder" style={{ justifyItems: "end" }}>
             <img
-              src={meImage}
+              src={mePicture}
               alt="Atheesh Rathnaweera"
               style={{
                 width: "75%",
