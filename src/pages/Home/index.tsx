@@ -1,5 +1,7 @@
+import { SiteFooter } from "@/components";
 import {
   AboutSection,
+  ContactSection,
   ExperienceSection,
   HeroSection,
   WorkSection,
@@ -12,6 +14,8 @@ const Home = () => {
       <AboutSection />
       <ExperienceSection />
       <WorkSection />
+      <ContactSection />
+      <SiteFooter />
     </>
   );
 };
