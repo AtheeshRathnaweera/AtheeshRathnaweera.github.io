@@ -6,7 +6,7 @@ import {
   NavbarToggle,
 } from "flowbite-react";
 import { useEffect, useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import appLogoWhite from "/app_logo_white.png";
 
 const navLinks = [
@@ -43,7 +43,7 @@ const TopNavBar = () => {
   return (
     <Navbar
       fluid
-      className={`fixed w-full z-[100] top-0 py-6 !px-10 transition-transform duration-300 ${
+      className={`fixed w-full z-[100] top-0 py-6 !px-10 xl:!px-15 transition-transform duration-300 ${
         show ? "translate-y-0" : "-translate-y-full"
       }`}
       style={{

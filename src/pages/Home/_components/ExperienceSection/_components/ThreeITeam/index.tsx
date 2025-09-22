@@ -10,7 +10,7 @@ const ThreeITeamIntl = () => {
             href="https://3iteam.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xl text-cyan-700 dark:text-cyan-300 font-semibold hover:underline"
+            className="text-xl text-grey dark:text-white font-semibold hover:underline"
           >
             @ 3iTeam International
           </a>

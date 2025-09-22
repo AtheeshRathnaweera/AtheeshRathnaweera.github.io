@@ -1,9 +1,9 @@
-import React from "react";
+import { type CSSProperties, type ReactNode } from "react";
 
 interface SectionProps {
   id: string;
-  children: React.ReactNode;
-  style?: React.CSSProperties;
+  children: ReactNode;
+  style?: CSSProperties;
   className?: string;
 }
 

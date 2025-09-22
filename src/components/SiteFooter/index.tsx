@@ -1,8 +1,11 @@
 const SiteFooter = () => (
-  <footer className="w-full py-9 text-center text-gray-500 dark:text-gray-400">
-    &copy; {new Date().getFullYear()} Atheesh Rathnaweera. All rights reserved.
+  <footer className="w-full py-9 text-center text-gray-500 dark:text-gray-400 text-sm">
+    <span>
+      &copy; {new Date().getFullYear()} Atheesh Rathnaweera. All rights
+      reserved.
+    </span>
     <br />
-    <span className="text-sm">
+    <span className="text-xs">
       Design inspired by{" "}
       <a
         href="https://v4.brittanychiang.com/"

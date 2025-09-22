@@ -6,8 +6,8 @@ const AboutSection = () => {
     <Section id="about">
       <SectionTitle>About Me</SectionTitle>
       <SectionContent>
-        <div className="grid grid-cols-1 sm:grid-cols-3">
-          <div className="col-span-2 leading-relaxed">
+        <div className="grid grid-cols-1 pb-12 sm:grid-cols-3 sm:pb-12 md:grid-cols-5 lg:grid-cols-4">
+          <div className="leading-relaxed order-2 col-span-4 sm:order-2 sm:col-span-4 md:order-1 md:col-span-3 lg:order-1 lg:col-span-3">
             <p className="text-gray-500 dark:text-gray-400 mb-4">
               Hello! My name is <span className="font-semibold">Atheesh</span>{" "}
               and I love building things that live on the internet. My interest
@@ -34,20 +34,11 @@ const AboutSection = () => {
               <li>Airflow, DBT</li>
             </ul>
           </div>
-          <div className="img-holder" style={{ justifyItems: "end" }}>
+          <div className="justify-items-center px-4 pb-7 order-1 col-span-4 sm:order-1 sm:col-span-4 sm:justify-items-center sm:pb-5 sm:pr-1.75 md:order-1 md:col-span-2 lg:order-2 lg:col-span-1">
             <img
               src={mePicture}
               alt="Atheesh Rathnaweera"
-              style={{
-                width: "75%",
-                height: "auto",
-                borderRadius: "0.5rem",
-                objectFit: "cover",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.15)",
-                outline: "2px solid #9ca3af",
-                outlineOffset: "4px",
-                transition: "box-shadow 0.3s, border-color 0.3s",
-              }}
+              className="w-4/5 sm:w-1/2 md:w-5/6 xl:w-4/5 h-auto rounded-lg object-cover shadow-[0_8px_32px_rgba(0,0,0,0.15)] outline-2 outline-[#9ca3af] outline-offset-4 transition-[box-shadow,border-color] duration-300"
             />
           </div>
         </div>

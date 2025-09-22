@@ -6,7 +6,7 @@ const GreyMoose = () => {
           <h3 className="text-xl font-bold text-gray-900 dark:text-white">
             Freelance Flutter Developer
           </h3>
-          <span className="text-xl text-cyan-700 dark:text-cyan-300 font-semibold">
+          <span className="text-xl text-grey dark:text-white font-semibold">
             @ Grey Moose Technologies Inc.
           </span>
         </div>

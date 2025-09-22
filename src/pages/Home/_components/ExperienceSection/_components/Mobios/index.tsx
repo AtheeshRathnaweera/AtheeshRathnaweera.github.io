@@ -10,7 +10,7 @@ const Mobios = () => {
             href="https://www.mobios.lk/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xl text-cyan-700 dark:text-cyan-300 font-semibold hover:underline"
+            className="text-xl text-grey dark:text-white font-semibold hover:underline"
           >
             @ mobiOs Pvt Ltd
           </a>

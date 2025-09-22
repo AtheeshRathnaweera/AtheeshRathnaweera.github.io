@@ -42,7 +42,7 @@ const ProjectCard = ({
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex max-w-sm p-6 border border-gray-700 rounded-lg shadow-sm flex-col h-full transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:border-cyan-700 cursor-pointer"
+        className="flex w-full h-full p-6 border border-gray-700 rounded-lg shadow-sm flex-col transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:border-white cursor-pointer"
         style={{ backgroundColor: "#1a1a1a", textDecoration: "none" }}
       >
         {CardContent}
@@ -52,7 +52,7 @@ const ProjectCard = ({
 
   return (
     <div
-      className="flex max-w-sm p-6 border border-gray-700 rounded-lg shadow-sm flex-col h-full"
+      className="flex w-full h-full p-6 border border-gray-700 rounded-lg shadow-sm flex-col"
       style={{ backgroundColor: "#1a1a1a" }}
     >
       {CardContent}
