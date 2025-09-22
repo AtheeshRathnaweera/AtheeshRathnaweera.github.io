@@ -6,7 +6,11 @@ interface SectionContentProps {
 }
 
 const SectionContent = ({ children, className }: SectionContentProps) => {
-  return <div className={`mt-3 ${className}`}>{children}</div>;
+  return (
+    <div className={`mt-3 w-full ${className ? ` ${className}` : ""}`}>
+      {children}
+    </div>
+  );
 };
 
 export default SectionContent;

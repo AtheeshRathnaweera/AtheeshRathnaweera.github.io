@@ -17,15 +17,15 @@ const ExperienceSection = () => {
       <SectionTitle>Where I've Worked</SectionTitle>
       <SectionContent>
         <div className="md:flex">
-          <ul className="flex flex-row md:flex-col text-sm font-medium text-gray-500 dark:text-gray-400 sm:me-0 md:me-4 lg:me-6 mb-4 md:mb-0">
+          <ul className="flex flex-row md:flex-col text-sm font-medium text-gray-700 dark:text-gray-400 sm:me-0 md:me-4 lg:me-6 mb-4 md:mb-0 overflow-x-auto whitespace-nowrap scrollbar-thin scrollbar-thumb-gray-400">
             {TABS.map((tab) => (
               <li key={tab.id} className="flex-1 md:flex-none">
                 <button
                   type="button"
                   className={`flex md:inline-flex items-center justify-center md:justify-start px-4 py-3 w-full h-20 md:h-auto cursor-pointer border-b-3 md:border-b-0 md:border-l-3 whitespace-normal ${
                     activeTab === tab.id
-                      ? "border-white dark:border-white text-white dark:text-white bg-transparent"
-                      : "border-gray-500 hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+                      ? "border-black dark:border-white  dark:text-white bg-transparent"
+                      : "border-gray-200 hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-800"
                   }`}
                   onClick={() => setActiveTab(tab.id)}
                   aria-current={activeTab === tab.id ? "page" : undefined}
