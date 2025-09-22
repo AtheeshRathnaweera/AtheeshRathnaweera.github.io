@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 
 const MainContent = () => (
-  <main className="pl-20 pr-20 sm:pl-15 sm:pr-15 flex-1 min-h-screen">
+  <main className="flex-1 min-h-screen px-15 sm:px-20 lg:px-30 xl:px-40">
     <Outlet />
   </main>
 );
