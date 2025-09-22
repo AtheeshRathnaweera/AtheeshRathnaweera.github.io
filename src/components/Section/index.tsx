@@ -16,8 +16,6 @@ const Section = ({ id, children, style, className = "" }: SectionProps) => (
     flex
     flex-col
     justify-center
-    bg-[var(--color-bg)]
-    text-[var(--color-text)]
     ${className}
   `}
   >

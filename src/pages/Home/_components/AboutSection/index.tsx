@@ -38,7 +38,7 @@ const AboutSection = () => {
             <img
               src={mePicture}
               alt="Atheesh Rathnaweera"
-              className="w-4/5 sm:w-1/2 md:w-5/6 xl:w-4/5 h-auto rounded-lg object-cover shadow-[0_8px_32px_rgba(0,0,0,0.15)] outline-2 outline-[#9ca3af] outline-offset-4 transition-[box-shadow,border-color] duration-300"
+              className="w-7/8 sm:w-1/2 md:w-5/6 xl:w-4/5 h-auto rounded-lg object-cover shadow-[0_8px_32px_rgba(0,0,0,0.15)] outline-2 outline-[#9ca3af] outline-offset-4 transition-[box-shadow,border-color] duration-300"
             />
           </div>
         </div>

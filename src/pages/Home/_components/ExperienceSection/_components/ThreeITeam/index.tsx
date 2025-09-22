@@ -2,15 +2,15 @@ const ThreeITeamIntl = () => {
   return (
     <div className="text-gray-500 dark:text-gray-400 w-full">
       <div className="block">
-        <div className="flex items-center gap-1">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+        <div className="flex flex-col gap-1 md:flex-row md:items-center">
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white order-2 md:order-1">
             Freelance Web Developer
           </h3>
           <a
             href="https://3iteam.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xl text-grey dark:text-white font-semibold hover:underline"
+            className="text-xl text-grey dark:text-white font-semibold hover:underline order-1 md:order-2"
           >
             @ 3iTeam International
           </a>

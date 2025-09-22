@@ -8,6 +8,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import appLogoWhite from "/app_logo_white.png";
+import appLogoBlack from "/app_logo_black.png";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -46,15 +47,17 @@ const TopNavBar = () => {
       className={`fixed w-full z-[100] top-0 py-6 !px-10 xl:!px-15 transition-transform duration-300 ${
         show ? "translate-y-0" : "-translate-y-full"
       }`}
-      style={{
-        background: "var(--color-bg)",
-      }}
     >
       <NavbarBrand href="#home">
         <img
           src={appLogoWhite}
           alt="Atheesh Rathnaweera"
-          className="w-12/100 h-auto sm:w-10/100"
+          className="w-12/100 h-auto sm:w-10/100 hidden dark:block"
+        />
+        <img
+          src={appLogoBlack}
+          alt="Atheesh Rathnaweera"
+          className="w-12/100 h-auto sm:w-10/100 dark:hidden"
         />
       </NavbarBrand>
       <NavbarToggle />
