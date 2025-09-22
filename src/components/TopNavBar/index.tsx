@@ -6,9 +6,9 @@ import {
   NavbarToggle,
 } from "flowbite-react";
 import { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
 import appLogoWhite from "/app_logo_white.png";
 import appLogoBlack from "/app_logo_black.png";
+import { useAppContext } from "@/contexts";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -19,9 +19,9 @@ const navLinks = [
 ];
 
 const TopNavBar = () => {
-  const location = useLocation();
   const [show, setShow] = useState(true);
   const lastScrollY = useRef(window.scrollY);
+  const { activeSection } = useAppContext();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,10 +66,7 @@ const TopNavBar = () => {
           <NavbarLink
             key={link.href}
             href={link.href}
-            active={
-              (location.hash === "" && link.href === "#home") ||
-              location.hash === link.href
-            }
+            active={activeSection === link.label.toLowerCase()}
           >
             {link.label}
           </NavbarLink>
