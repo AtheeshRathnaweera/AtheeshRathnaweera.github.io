@@ -44,7 +44,7 @@ const TopNavBar = () => {
   return (
     <Navbar
       fluid
-      className={`fixed w-full z-[100] top-0 py-6 !px-10 xl:!px-15 transition-transform duration-300 ${
+      className={`fixed w-full z-[100] top-0 py-6 !px-10 xl:!px-15 transition-transform duration-300 dark:bg-[var(--color-dark-bg)] ${
         show ? "translate-y-0" : "-translate-y-full"
       }`}
     >

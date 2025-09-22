@@ -8,6 +8,7 @@
 @plugin "flowbite-react/plugin/tailwindcss";
 @source "../.flowbite-react/class-list.json";
 @plugin "flowbite-typography";
+/* @custom-variant dark (&:where(.dark, .dark *)); */
 
 /* Theme variables */
 @theme {
@@ -15,11 +16,13 @@
   --font-body: "Poppins", "ui-sans-serif", "system-ui", "sans-serif";
   --font-mono: "ui-monospace", "SFMono-Regular", "Menlo", "monospace";
 
-  /* Main colors */
-  --color-bg: #121212;
-  --color-text: #ffffff;
-  --color-text-secondary: #e0e0e0;
-  --color-accent: #0ea5e9;
+  /* Light theme colors */
+  --color-light-bg: #f8fafc;
+  --color-light-text: #222222;
+  --color-light-text-secondary: #6b7280;
+  --color-light-accent: #0ea5e9;
+
+  --color-dark-bg: #121212;
 }
 
 /* Apply global styles */
