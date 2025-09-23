@@ -2,7 +2,7 @@ import { getDuration } from "@/utils/common";
 
 const Novigi = () => {
   return (
-    <div className="text-gray-500 dark:text-gray-400 w-full">
+    <div className="text-gray-600 dark:text-gray-400 w-full">
       <a
         href="https://www.novigi.com.au/"
         target="_blank"
@@ -18,12 +18,12 @@ const Novigi = () => {
               Senior Software Engineer
             </h3>
           </div>
-          <span className="block text-sm text-gray-500 dark:text-gray-400 mt-1">
+          <span className="block text-sm text-gray-600 dark:text-gray-400 mt-1">
             Jul 2023 - Present · {getDuration("2023-07-01")}
           </span>
         </div>
         <div className="mt-4">
-          <ul className="text-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+          <ul className="text-md space-y-1 text-gray-600 list-disc list-inside dark:text-gray-400">
             <li>
               Developed and maintained web applications using React and Node.js
             </li>
@@ -48,12 +48,12 @@ const Novigi = () => {
               Software Engineer
             </h3>
           </div>
-          <span className="block text-sm text-gray-500 dark:text-gray-400 mt-1">
+          <span className="block text-sm text-gray-600 dark:text-gray-400 mt-1">
             Sep 2021 - Aug 2023 · 2 yrs
           </span>
         </div>
         <div className="mt-4">
-          <ul className="text-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+          <ul className="text-md space-y-1 text-gray-600 list-disc list-inside dark:text-gray-400">
             <li>
               Developed and maintained web applications using React and Node.js
             </li>
@@ -78,12 +78,12 @@ const Novigi = () => {
               Associate Software Engineer
             </h3>
           </div>
-          <span className="block text-sm text-gray-500 dark:text-gray-400 mt-1">
+          <span className="block text-sm text-gray-600 dark:text-gray-400 mt-1">
             Mar 2021 - Aug 2021 · 6 mos
           </span>
         </div>
         <div className="mt-4">
-          <ul className="text-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+          <ul className="text-md space-y-1 text-gray-600 list-disc list-inside dark:text-gray-400">
             <li>
               Developed and maintained web applications using React and Node.js
             </li>

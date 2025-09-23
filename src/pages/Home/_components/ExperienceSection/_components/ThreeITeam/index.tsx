@@ -1,6 +1,6 @@
 const ThreeITeamIntl = () => {
   return (
-    <div className="text-gray-500 dark:text-gray-400 w-full">
+    <div className="text-gray-600 dark:text-gray-400 w-full">
       <div className="block">
         <div className="flex flex-col gap-1 md:flex-row md:items-center">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white order-2 md:order-1">
@@ -15,12 +15,12 @@ const ThreeITeamIntl = () => {
             @ 3iTeam International
           </a>
         </div>
-        <span className="block text-sm text-gray-500 dark:text-gray-400 mt-1">
+        <span className="block text-sm text-gray-600 dark:text-gray-400 mt-1">
           Mar 2020 - Jul 2022 · 2 yrs 5 mos
         </span>
       </div>
       <div className="mt-4">
-        <ul className="text-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+        <ul className="text-md space-y-1 text-gray-600 list-disc list-inside dark:text-gray-400">
           <li>
             Developed and maintained web applications using React and Node.js
           </li>
