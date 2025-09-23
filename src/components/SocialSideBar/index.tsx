@@ -12,7 +12,7 @@ const SocialSideBar = () => {
         <img
           src={githubIcon}
           alt="GitHub"
-          className="w-6 h-6 inline-block dark:invert"
+          className="w-6 h-6 inline-block filter brightness-0 saturate-0 opacity-70 dark:invert dark:opacity-100"
         />
       </a>
       <a
@@ -24,7 +24,7 @@ const SocialSideBar = () => {
         <img
           src={linkedinIcon}
           alt="Linkedin"
-          className="w-6 h-6 inline-block dark:invert"
+          className="w-6 h-6 inline-block filter brightness-0 saturate-0 opacity-70 dark:invert dark:opacity-100"
         />
       </a>
       <a
@@ -36,7 +36,7 @@ const SocialSideBar = () => {
         <img
           src={twitterIcon}
           alt="Twitter"
-          className="w-6 h-6 inline-block dark:invert"
+          className="w-6 h-6 inline-block filter brightness-0 saturate-0 opacity-70 dark:invert dark:opacity-100"
         />
       </a>
       <a
@@ -48,7 +48,7 @@ const SocialSideBar = () => {
         <img
           src={redditIcon}
           alt="Reddit"
-          className="w-6 h-6 inline-block dark:invert"
+          className="w-6 h-6 inline-block filter brightness-0 saturate-0 opacity-70 dark:invert dark:opacity-100"
         />
       </a>
     </aside>

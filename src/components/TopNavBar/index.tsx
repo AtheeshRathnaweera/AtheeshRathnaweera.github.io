@@ -60,13 +60,18 @@ const TopNavBar = () => {
           className="w-12/100 h-auto sm:w-10/100 dark:hidden"
         />
       </NavbarBrand>
-      <NavbarToggle />
+      <NavbarToggle className="!text-black dark:hover:!text-white" />
       <NavbarCollapse>
         {navLinks.map((link) => (
           <NavbarLink
             key={link.href}
             href={link.href}
             active={activeSection === link.label.toLowerCase()}
+            className={
+              activeSection === link.label.toLowerCase()
+                ? "!text-black dark:!text-white font-semibold hover:!text-black dark:hover:!text-white"
+                : "text-gray-600 hover:!text-black dark:hover:!text-white"
+            }
           >
             {link.label}
           </NavbarLink>

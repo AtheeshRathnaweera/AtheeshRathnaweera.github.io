@@ -21,7 +21,7 @@ const HeroSection = () => {
         </span>{" "}
         from Sri Lanka who loves building intuitive digital experiences.
       </h3>
-      <p className="mt-4 text-gray-500 dark:text-gray-400 leading-relaxed max-w-full sm:max-w-xl md:max-w-xl lg:max-w-2xl xl:max-w-2xl 2xl:max-w-5xl">
+      <p className="mt-4 text-gray-600 dark:text-gray-400 leading-relaxed max-w-full sm:max-w-xl md:max-w-xl lg:max-w-2xl xl:max-w-2xl 2xl:max-w-5xl">
         I’m passionate about learning new technologies and writing clean,
         maintainable code—I enjoy exploring random projects in my GitHub
         playground. Currently working as a Senior Software Engineer, I’m focused

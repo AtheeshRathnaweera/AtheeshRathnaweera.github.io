@@ -5,7 +5,7 @@ const ContactSection = () => {
     <Section id="contact">
       <SectionTitle className="text-center">Get In Touch</SectionTitle>
       <SectionContent className="flex flex-col items-center leading-relaxed">
-        <div className="block sm:w-3/4 md:w-1/2 text-gray-500 dark:text-gray-400 text-center">
+        <div className="block sm:w-3/4 md:w-1/2 text-gray-600 dark:text-gray-400 text-center">
           Although I’m not currently looking for any new opportunities, my inbox
           is always open. Whether you have a question or just want to say hi,
           I’ll try my best to get back to you!

@@ -1,5 +1,5 @@
 const SiteFooter = () => (
-  <footer className="w-full py-9 text-center text-gray-500 dark:text-gray-400 text-sm">
+  <footer className="w-full py-9 text-center text-gray-600 dark:text-gray-400 text-sm">
     <span>
       &copy; {new Date().getFullYear()} Atheesh Rathnaweera. All rights
       reserved.

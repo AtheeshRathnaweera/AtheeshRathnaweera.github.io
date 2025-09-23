@@ -16,7 +16,7 @@ const ProjectCard = ({
       <h5 className="mb-2 text-xl font-bold tracking-tight dark:text-white">
         {title}
       </h5>
-      <p className="text-sm font-normal text-gray-700 dark:text-gray-400 leading-relaxed">
+      <p className="text-sm font-normal text-gray-600 dark:text-gray-400 leading-relaxed">
         {description}
       </p>
       <div className="flex-1" />
