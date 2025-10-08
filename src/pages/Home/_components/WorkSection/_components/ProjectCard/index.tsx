@@ -41,7 +41,7 @@ const ProjectCard = ({
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex w-full h-full p-3 sm:p-6 border border-gray-200 rounded-lg shadow-sm flex-col transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:border-white cursor-pointer dark:bg-[#1a1a1a] dark:border-gray-700"
+        className="flex w-full h-full p-3 sm:p-6 rounded-lg shadow-sm flex-col transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:border-white cursor-pointer dark:bg-[#1a1a1a] dark:border-gray-700"
         style={{ textDecoration: "none" }}
       >
         {CardContent}
@@ -50,7 +50,7 @@ const ProjectCard = ({
   }
 
   return (
-    <div className="flex w-full h-full p-3 sm:p-6 border border-gray-200 rounded-lg shadow-sm flex-col dark:bg-[#1a1a1a] dark:border-gray-700 border-red">
+    <div className="flex w-full h-full p-3 sm:p-6 rounded-lg shadow-sm flex-col dark:bg-[#1a1a1a] dark:border-gray-700 border-red">
       {CardContent}
     </div>
   );
