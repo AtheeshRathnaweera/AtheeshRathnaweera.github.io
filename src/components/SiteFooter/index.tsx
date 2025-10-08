@@ -11,7 +11,6 @@ const SiteFooter = () => (
       >
         Brittany Chiang
       </a>
-      .
     </p>
     <p className="mb-0.5 text-xs">
       View source on{" "}
@@ -23,7 +22,6 @@ const SiteFooter = () => (
       >
         GitHub
       </a>
-      .
     </p>
   </footer>
 );
