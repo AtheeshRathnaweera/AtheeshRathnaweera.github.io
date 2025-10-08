@@ -1,4 +1,4 @@
-import { mePicture } from "@/assets";
+import mePicture from "/me_001.jpeg";
 import { Section, SectionContent, SectionTitle } from "@/components";
 
 const AboutSection = () => {
