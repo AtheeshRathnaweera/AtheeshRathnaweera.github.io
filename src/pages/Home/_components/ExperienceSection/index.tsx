@@ -22,7 +22,7 @@ const ExperienceSection = () => {
               <li key={tab.id} className="flex-1 md:flex-none">
                 <button
                   type="button"
-                  className={`flex md:inline-flex items-center justify-center md:justify-start px-4 py-3 w-full h-20 md:h-auto cursor-pointer border-b-3 md:border-b-0 md:border-l-3 whitespace-normal ${
+                  className={`flex md:inline-flex items-center justify-center md:justify-start px-4 py-3 w-full h-20 md:h-auto cursor-pointer border-b-3 md:border-b-0 md:border-l-3 2xl:border-l-4 whitespace-normal ${
                     activeTab === tab.id
                       ? "border-black dark:border-white  dark:text-white bg-transparent"
                       : "border-gray-200 hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white dark:border-gray-800"
@@ -39,7 +39,7 @@ const ExperienceSection = () => {
               </li>
             ))}
           </ul>
-          <div className="flex-1 pt-5 sm:pl-0 md:pt-0 md:pl-6 lg:pl-12 xl:pl-24">
+          <div className="flex-1 pt-5 sm:pl-0 md:pt-0 md:pl-6 lg:pl-12 xl:pl-24 2xl:pl-30">
             {activeTab === "1" && <Novigi />}
             {activeTab === "2" && <GreyMoose />}
             {activeTab === "3" && <ThreeITeam />}
