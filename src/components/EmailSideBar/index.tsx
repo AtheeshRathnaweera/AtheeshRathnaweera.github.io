@@ -8,7 +8,7 @@ const EmailSideBar = () => {
           textOrientation: "mixed",
         }}
       >
-        rathnaweeraatheesh71@gmail.com
+        rathnaweeraatheesh72@gmail.com
       </span>
     </aside>
   );

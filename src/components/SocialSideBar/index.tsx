@@ -16,7 +16,7 @@ const SocialSideBar = () => {
         />
       </a>
       <a
-        href="https://linkedin.com/"
+        href="https://www.linkedin.com/in/atheeshrathnaweera/"
         target="_blank"
         rel="noopener noreferrer"
         className="my-2 2xl:my-5"
@@ -28,7 +28,7 @@ const SocialSideBar = () => {
         />
       </a>
       <a
-        href="https://twitter.com/"
+        href="https://x.com/AtheeshRathnaw2"
         target="_blank"
         rel="noopener noreferrer"
         className="my-2 2xl:my-5"
