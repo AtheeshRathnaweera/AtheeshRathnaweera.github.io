@@ -8,6 +8,20 @@ const WorkSection = () => {
       <SectionContent>
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <ProjectCard
+            title="LKExRates – AI-Powered Exchange Rate Dashboard"
+            description="An AI-assisted system that scrapes daily exchange rates from major Sri Lankan banks. Features a clean, interactive dashboard with filtering options and real-time insights, built with Agno framework, FastAPI, and LLM-powered extraction."
+            link="https://lkexrates.atheeshr.com/"
+            topics={[
+              "FastAPI",
+              "Python",
+              "LLM",
+              "Agno",
+              "AI",
+              "Dashboard",
+              "Web Scraping",
+            ]}
+          />
+          <ProjectCard
             title="Unlimited Lyrics"
             description="A Laravel-powered web application for browsing, searching, and viewing a curated collection of song lyrics. Users can easily discover lyrics by song name and explore a growing database of music content."
             topics={["Laravel", "Bootstrap", "PHP", "Heroku"]}
