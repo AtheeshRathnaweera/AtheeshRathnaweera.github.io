@@ -2,7 +2,7 @@ import { githubIcon, linkedinIcon, redditIcon, twitterIcon } from "@/assets";
 
 const SocialSideBar = () => {
   return (
-    <aside className="w-15 flex flex-col items-center py-12 overflow-hidden fixed left-0 h-screen z-10 dark:text-white gap-6 justify-end sm:w-20 lg:w-30 xl:w-40 2xl:w-50">
+    <aside className="hidden w-15 sm:flex flex-col items-center py-12 overflow-hidden fixed left-0 h-screen z-10 dark:text-white gap-6 justify-end sm:w-20 lg:w-30 xl:w-40 2xl:w-50">
       <a
         href="https://github.com/"
         target="_blank"
