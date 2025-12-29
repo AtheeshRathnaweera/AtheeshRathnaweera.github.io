@@ -1,8 +1,10 @@
+import { slideInLeft } from "@/animations/motionVariants";
 import { githubIcon, linkedinIcon, redditIcon, twitterIcon } from "@/assets";
+import { motion } from "framer-motion";
 
 const SocialSideBar = () => {
   return (
-    <aside className="hidden w-15 sm:flex flex-col items-center py-12 overflow-hidden fixed left-0 h-screen z-10 dark:text-white gap-6 justify-end sm:w-20 lg:w-30 xl:w-40 2xl:w-50">
+    <motion.aside variants={slideInLeft} initial="hidden" animate="visible" className="hidden w-15 sm:flex flex-col items-center py-12 overflow-hidden fixed left-0 h-screen z-10 dark:text-white gap-6 justify-end sm:w-20 lg:w-30 xl:w-40 2xl:w-50">
       <a
         href="https://github.com/"
         target="_blank"
@@ -51,7 +53,7 @@ const SocialSideBar = () => {
           className="w-5 h-5 sm:w-6 sm:h-6 2xl:w-7 2xl:h-7 inline-block filter brightness-0 saturate-0 opacity-70 dark:invert dark:opacity-100"
         />
       </a>
-    </aside>
+    </motion.aside>
   );
 };
 

@@ -1,8 +1,15 @@
+import { slideInRight } from "@/animations/motionVariants";
 import { githubIcon, linkedinIcon, redditIcon, twitterIcon } from "@/assets";
+import { motion } from "framer-motion";
 
 const EmailSideBar = () => {
   return (
-    <aside className="w-15 flex flex-col items-center py-12 overflow-hidden fixed right-0 h-screen z-10 dark:text-white justify-end sm:w-20 lg:w-30 xl:w-40 2xl:w-50 2xl:py-15">
+    <motion.aside
+      variants={slideInRight}
+      initial="hidden"
+      animate="visible"
+      className="w-15 flex flex-col items-center py-12 overflow-hidden fixed right-0 h-screen z-10 dark:text-white justify-end sm:w-20 lg:w-30 xl:w-40 2xl:w-50 2xl:py-15"
+    >
       <span
         className="text-[0.8rem] sm:text-[0.9rem] 2xl:text-[1rem] whitespace-nowrap tracking-[2px] text-gray-600 dark:text-white"
         style={{
@@ -60,7 +67,7 @@ const EmailSideBar = () => {
           className="w-5 h-5 sm:w-6 sm:h-6 2xl:w-7 2xl:h-7 inline-block filter brightness-0 saturate-0 opacity-70 dark:invert dark:opacity-100"
         />
       </a>
-    </aside>
+    </motion.aside>
   );
 };
 
