@@ -44,7 +44,7 @@ const TopNavBar = () => {
   return (
     <Navbar
       fluid
-      className={`fixed w-full z-[100] top-0 py-6 !px-10 xl:!px-15 2xl:!px-21 transition-transform duration-300 dark:bg-[var(--color-dark-bg)] ${
+      className={`fixed w-full z-[100] top-0 py-6 px-5! sm:px-10! xl:px-15! 2xl:px-21! transition-transform duration-300 dark:bg-[var(--color-dark-bg)] ${
         show ? "translate-y-0" : "-translate-y-full"
       }`}
     >
@@ -60,7 +60,7 @@ const TopNavBar = () => {
           className="w-12/100 h-auto sm:w-10/100 dark:hidden"
         />
       </NavbarBrand>
-      <NavbarToggle className="!text-black dark:!text-white dark:hover:!text-white" />
+      <NavbarToggle className="text-black! dark:text-white! dark:hover:text-white!" />
       <NavbarCollapse>
         {navLinks.map((link) => (
           <NavbarLink
@@ -69,8 +69,8 @@ const TopNavBar = () => {
             active={activeSection === link.label.toLowerCase()}
             className={
               activeSection === link.label.toLowerCase()
-                ? "!text-white bg-black font-semibold dark:!text-black dark:bg-white md:dark:bg-transparent md:!text-black md:dark:!text-white md:hover:!text-black md:dark:hover:!text-white"
-                : "text-gray-600 hover:!text-black dark:hover:!text-white"
+                ? "text-white! bg-black font-semibold dark:text-black! dark:bg-white md:dark:bg-transparent md:text-black! md:dark:text-white! md:hover:text-black! md:dark:hover:text-white!"
+                : "text-gray-600 hover:text-black! dark:hover:text-white!"
             }
           >
             {link.label}

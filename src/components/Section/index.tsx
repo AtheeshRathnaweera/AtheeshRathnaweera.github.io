@@ -1,4 +1,5 @@
 import { type CSSProperties, type ReactNode } from "react";
+import { motion } from "framer-motion";
 
 interface SectionProps {
   id: string;
@@ -8,7 +9,7 @@ interface SectionProps {
 }
 
 const Section = ({ id, children, style, className = "" }: SectionProps) => (
-  <section
+  <motion.section
     id={id}
     style={style}
     className={`
@@ -18,9 +19,13 @@ const Section = ({ id, children, style, className = "" }: SectionProps) => (
     justify-center
     ${className}
   `}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: false, amount: 0.3 }}
+    transition={{ duration: 0.6 }}
   >
     {children}
-  </section>
+  </motion.section>
 );
 
 export default Section;

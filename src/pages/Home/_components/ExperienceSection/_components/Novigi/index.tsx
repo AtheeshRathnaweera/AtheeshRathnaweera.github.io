@@ -1,8 +1,9 @@
 import { getDuration } from "@/utils/common";
+import { DivContainer } from "@/components";
 
 const Novigi = () => {
   return (
-    <div className="text-gray-600 dark:text-gray-400 w-full">
+    <DivContainer className="text-gray-600 dark:text-gray-400 w-full">
       <a
         href="https://www.novigi.com.au/"
         target="_blank"
@@ -98,7 +99,7 @@ const Novigi = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </DivContainer>
   );
 };
 
