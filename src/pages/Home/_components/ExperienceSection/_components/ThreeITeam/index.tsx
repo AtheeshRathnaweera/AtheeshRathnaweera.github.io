@@ -1,6 +1,8 @@
+import { DivContainer } from "@/components";
+
 const ThreeITeamIntl = () => {
   return (
-    <div className="text-gray-600 dark:text-gray-400 w-full">
+    <DivContainer className="text-gray-600 dark:text-gray-400 w-full">
       <div className="block">
         <div className="flex flex-col gap-1 md:flex-row md:items-center">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white order-2 md:order-1">
@@ -37,8 +39,8 @@ const ThreeITeamIntl = () => {
           <li>Gained experience with Agile development methodologies</li>
         </ul>
       </div>
-    </div>
+    </DivContainer>
   );
-}
+};
 
 export default ThreeITeamIntl;
