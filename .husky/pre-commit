@@ -1,0 +1,19 @@
+# ------------------------------------------------------------
+# Pre-commit hook: 
+# 1. Warn about outdated dependencies
+# 2. Run lint-staged to validate staged files
+# ------------------------------------------------------------
+
+# 1️⃣ Check outdated dependencies (warnings only)
+echo "🔹 Checking for outdated dependencies..."
+if npm outdated --depth=0; then
+  echo "✅ All dependencies are up-to-date."
+else
+  echo "⚠️ Warning: Some dependencies are outdated. Please review before pushing."
+fi
+echo ""
+
+# 2️⃣ Run lint-staged
+echo "🔹 Running lint-staged to validate staged files..."
+npx lint-staged
+echo ""
