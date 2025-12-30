@@ -22,21 +22,18 @@ const ThreeITeamIntl = () => {
         </span>
       </div>
       <div className="mt-4">
-        <ul className="text-md space-y-1 text-gray-600 list-disc list-inside dark:text-gray-400">
+        <ul className="text-sm space-y-1 text-gray-600 list-disc list-inside dark:text-gray-400">
           <li>
-            Developed and maintained web applications using React and Node.js
+            Engaged as a project-based freelance developer, contributing to 5+ enterprise-level web applications.
           </li>
           <li>
-            Collaborated with senior engineers to design and implement new
-            features
+            Worked with JSP and Spring Boot (Thymeleaf), focusing on frontend development as well as backend integration and business logic handling.
           </li>
           <li>
-            Participated in code reviews and contributed to improving code
-            quality
+            Integrated frontend components with RESTful services, ensuring performance, reliability, and scalability.
           </li>
-          <li>Worked with RESTful APIs and integrated third-party services</li>
-          <li>Assisted in troubleshooting and debugging application issues</li>
-          <li>Gained experience with Agile development methodologies</li>
+          <li>Delivered high-quality solutions within strict timelines, meeting enterprise standards and client expectations.</li>
+          <li>Gained exposure to cloud and serverless technologies, including AWS S3 for storage, AWS Lambda for backend processing, and Firebase Authentication for secure user access.</li>
         </ul>
       </div>
     </DivContainer>

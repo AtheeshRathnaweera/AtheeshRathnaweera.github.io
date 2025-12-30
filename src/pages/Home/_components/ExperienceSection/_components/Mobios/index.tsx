@@ -22,21 +22,17 @@ const Mobios = () => {
         </span>
       </div>
       <div className="mt-4">
-        <ul className="text-md space-y-1 text-gray-600 list-disc list-inside dark:text-gray-400">
+        <ul className="text-sm space-y-1 text-gray-600 list-disc list-inside dark:text-gray-400">
           <li>
-            Developed and maintained web applications using React and Node.js
+            Contributed to an Ionic mobile application designed to calculate land area by marking boundary points directly within the app.
           </li>
           <li>
-            Collaborated with senior engineers to design and implement new
-            features
+            Worked on frontend bug fixes for a large-scale enterprise product built with JSP (Java EE), using HTML, CSS, JavaScript.
           </li>
           <li>
-            Participated in code reviews and contributed to improving code
-            quality
+            Played a major role in a Proof of Concept (POC) project focused on optimizing needle issuance in a garment factory production line, reducing manual paperwork and human intervention.
           </li>
-          <li>Worked with RESTful APIs and integrated third-party services</li>
-          <li>Assisted in troubleshooting and debugging application issues</li>
-          <li>Gained experience with Agile development methodologies</li>
+          <li>Gained hands-on experience in Java EE web development, with a strong focus on JSP-based applications and enterprise workflows.</li>
         </ul>
       </div>
     </DivContainer>
