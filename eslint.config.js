@@ -3,9 +3,10 @@ import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
+import prettierRecommended from "eslint-plugin-prettier/recommended";
 
 export default tseslint.config(
-  globalIgnores(['dist']),
+  { ignores: ["dist"] },
   {
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
@@ -19,8 +20,9 @@ export default tseslint.config(
     extends: [
       js.configs.recommended,
       tseslint.configs.recommended,
-      reactHooks.configs['recommended'],
-      reactRefresh.configs.vite
+      reactHooks.configs["recommended"],
+      reactRefresh.configs.vite,
+      prettierRecommended,
     ],
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -33,5 +35,5 @@ export default tseslint.config(
         { argsIgnorePattern: "^_" },
       ],
     },
-  }
+  },
 );
