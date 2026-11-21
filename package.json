@@ -9,7 +9,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postinstall": "node scripts/check-vulnerabilities.mjs --postinstall",
+    "check-vulnerabilities": "node scripts/check-vulnerabilities.mjs",
+    "check-vulnerabilities:ci": "node scripts/check-vulnerabilities.mjs --level=high --prod-only --strict"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json,css,md}": [

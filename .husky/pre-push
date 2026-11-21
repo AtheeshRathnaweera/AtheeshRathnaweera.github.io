@@ -1,12 +1,7 @@
 # ------------------------------------------------------------
 # Pre-push hook:
-# Run npm audit to warn about vulnerabilities before pushing
+# Warn about vulnerable packages that need action (never blocks the push).
+# Run `npm run check-vulnerabilities` any time to see the same report.
 # ------------------------------------------------------------
 
-echo "🔹 Running npm audit (audit-level: moderate) before push..."
-if npm audit --audit-level=moderate; then
-  echo "✅ No vulnerabilities found above the 'moderate' level."
-else
-  echo "⚠️ Warning: Some vulnerabilities were detected. Please review and fix before pushing."
-fi
-echo ""
+node scripts/check-vulnerabilities.mjs --level=moderate
