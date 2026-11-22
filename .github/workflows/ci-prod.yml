@@ -39,6 +39,10 @@ jobs:
           cache: "npm"
       - name: Install dependencies
         run: npm ci --ignore-scripts
+      # npm ci installs the lockfile as-is and skips peer dependency checks,
+      # so a mismatched update (e.g. @eslint/js 10 with eslint 9) would pass.
+      - name: Check dependency tree is valid
+        run: npm ls --all > /dev/null
       - name: Lint
         run: npm run lint
       - name: Check formatting
