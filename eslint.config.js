@@ -13,10 +13,8 @@ export default tseslint.config(
       ecmaVersion: 2020,
       globals: globals.browser,
     },
-    plugins: {
-      "react-hooks": reactHooks,
-      "react-refresh": reactRefresh,
-    },
+    // Plugins are registered by the configs in `extends`; declaring them
+    // here as well makes ESLint fail with "Cannot redefine plugin".
     extends: [
       js.configs.recommended,
       tseslint.configs.recommended,
