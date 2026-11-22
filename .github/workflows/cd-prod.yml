@@ -51,7 +51,7 @@ jobs:
           path: "./dist"
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
   # Tags the deployed commit and creates a GitHub release from the
   # package.json version. Runs only if the deploy succeeded.
