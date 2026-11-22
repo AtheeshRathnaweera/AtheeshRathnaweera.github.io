@@ -58,26 +58,26 @@ index.html         HTML shell with SEO, Open Graph, and structured data
 
 Checks run automatically at each stage:
 
-| When                                  | What runs                                                                       |
-| ------------------------------------- | ------------------------------------------------------------------------------- |
-| `npm install`                         | Vulnerability summary (warning only)                                            |
-| `git commit`                          | Prettier + ESLint on staged files (lint-staged)                                 |
-| `git push`                            | Vulnerability summary (warning only)                                            |
-| PRs, pushes to `dev`/`master`, weekly | **Security Audit** workflow - fails on high/critical production vulnerabilities |
-| Weekly                                | Dependabot opens dependency update PRs against **`dev`** only (never `master`)  |
-| New advisory published                | Dependabot alert email                                                          |
+| When                                  | What runs                                                                                                         |
+| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `npm install`                         | Vulnerability summary (warning only)                                                                              |
+| `git commit`                          | Prettier + ESLint on staged files (lint-staged)                                                                   |
+| `git push`                            | Vulnerability summary (warning only)                                                                              |
+| PRs into `dev`, pushes to `dev`       | **CI (dev)** - `build` (lint, Prettier, type-check, build) and `audit` (high/critical production vulnerabilities) |
+| PRs into `master`, pushes to `master` | **CI (prod)** - `build`, `audit`, and `version-bumped` (PRs only: fails if the version was already released)      |
+| Weekly                                | **CI (prod)** - `audit` of the live code on `master`                                                              |
+| Weekly                                | Dependabot opens dependency update PRs against **`dev`** only (never `master`)                                    |
+| New advisory published                | Dependabot alert email                                                                                            |
 
 ## Branching and releases
 
-```
-feature/*  ──PR──▶  dev  ──PR──▶  master  ──▶  deploy + tag vX.Y.Z
-```
+![Release flow: feature/* → PR → dev → PR → master → deploy + tag vX.Y.Z](docs/release-flow.svg)
 
 1. Create a feature branch from `dev`, then open a PR into `dev`.
 2. When ready to release, bump the version on `dev`:
    `npm version patch --no-git-tag-version` (or `minor` / `major`), and commit it.
-3. Open a PR from `dev` into `master`. The **Version Check** workflow fails the PR if the version was already released.
-4. Merge the PR. The **Build & Deploy** workflow publishes the site to GitHub Pages, then automatically
+3. Open a PR from `dev` into `master`. The **CI (prod)** `version-bumped` check fails the PR if the version was already released.
+4. Merge the PR. The **CD (prod)** workflow publishes the site to GitHub Pages, then automatically
    tags the commit `vX.Y.Z` and creates a GitHub release with generated notes.
 5. Merge `master` back into `dev` so both branches share the merge commit.
 
@@ -85,4 +85,4 @@ Dependabot update PRs target `dev`, so dependency updates are reviewed and merge
 
 ## Deployment
 
-The site deploys from `master` via [`.github/workflows/build-deploy-master.yml`](.github/workflows/build-deploy-master.yml). The custom domain is configured under **Settings → Pages**, with DNS managed in Cloudflare.
+The site deploys from `master` via [`.github/workflows/cd-prod.yml`](.github/workflows/cd-prod.yml). The custom domain is configured under **Settings → Pages**, with DNS managed in Cloudflare.
