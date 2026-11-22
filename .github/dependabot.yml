@@ -8,10 +8,48 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
+    # Packages that must be upgraded together are grouped so they always move
+    # in one PR. Each set has two groups:
+    #   <name>        minor/patch - routine, merge when CI is green
+    #   <name>-major  major       - read release notes first, merge when ready
+    # A package joins the first group that matches it.
     groups:
+      eslint:
+        patterns:
+          ["eslint", "@eslint/*", "eslint-*", "typescript-eslint", "globals"]
+        update-types: ["minor", "patch"]
+      eslint-major:
+        patterns:
+          ["eslint", "@eslint/*", "eslint-*", "typescript-eslint", "globals"]
+        update-types: ["major"]
+
+      vite:
+        patterns:
+          ["vite", "vite-*", "@vitejs/*", "@tailwindcss/vite", "tailwindcss"]
+        update-types: ["minor", "patch"]
+      vite-major:
+        patterns:
+          ["vite", "vite-*", "@vitejs/*", "@tailwindcss/vite", "tailwindcss"]
+        update-types: ["major"]
+
+      react:
+        patterns: ["react", "react-dom", "@types/react", "@types/react-dom"]
+        update-types: ["minor", "patch"]
+      react-major:
+        patterns: ["react", "react-dom", "@types/react", "@types/react-dom"]
+        update-types: ["major"]
+
+      # Everything else: routine dev-tool updates in one PR. Other major
+      # updates (e.g. framer-motion) still come as individual PRs.
       dev-dependencies:
         dependency-type: "development"
         update-types: ["minor", "patch"]
+    ignore:
+      # TypeScript 7 is a major rewrite; upgrade manually once typescript-eslint
+      # supports it. Remove this to get TypeScript major update PRs again.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+
   - package-ecosystem: "github-actions"
     directory: "/"
     target-branch: "dev"
