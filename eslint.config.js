@@ -18,12 +18,11 @@ export default tseslint.config(
     extends: [
       js.configs.recommended,
       tseslint.configs.recommended,
-      reactHooks.configs["recommended"],
+      reactHooks.configs.flat.recommended,
       reactRefresh.configs.vite,
       prettierRecommended,
     ],
     rules: {
-      ...reactHooks.configs.recommended.rules,
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },
