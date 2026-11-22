@@ -28,7 +28,7 @@ const level = opt("level", "moderate");
 const strict = flag("strict");
 const prodOnly = flag("prod-only");
 
-// On `npm install`, skip in CI (the Security Audit workflow covers it there).
+// On `npm install`, skip in CI (the CI workflows' audit jobs cover it there).
 if (flag("postinstall") && process.env.CI) process.exit(0);
 const minRank = SEVERITIES.indexOf(level);
 if (minRank === -1) {

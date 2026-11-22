@@ -1,0 +1,57 @@
+name: CI (dev)
+
+# Checks for day-to-day work: feature PRs into dev, Dependabot PRs, and pushes to dev.
+#
+#   build  lint, formatting, type-check and build
+#   audit  high/critical production vulnerabilities
+on:
+  pull_request:
+    branches: ["dev"]
+  push:
+    branches: ["dev"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Cancel an older run when new commits are pushed to the same PR/branch.
+concurrency:
+  group: ci-dev-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: lts/*
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: Lint
+        run: npm run lint
+      - name: Check formatting
+        run: npx prettier --check .
+      - name: Type-check and build
+        run: npm run build
+
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: lts/*
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: Full report (warning only)
+        run: node scripts/check-vulnerabilities.mjs --level=moderate
+      - name: Fail on high/critical in production dependencies
+        run: npm run check-vulnerabilities:ci
