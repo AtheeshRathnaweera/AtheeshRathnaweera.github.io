@@ -1,0 +1,25 @@
+name: Version Check
+
+# Fails a release PR (dev → master) if package.json still has a version
+# that was already released, so you don't forget to bump it.
+on:
+  pull_request:
+    branches: ["master"]
+
+permissions:
+  contents: read
+
+jobs:
+  version-bumped:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Check version is not already tagged
+        run: |
+          TAG="v$(node -p "require('./package.json').version")"
+          if git ls-remote --exit-code --tags origin "refs/tags/$TAG" >/dev/null; then
+            echo "::error file=package.json::$TAG is already released. Bump \"version\" in package.json (e.g. npm version patch --no-git-tag-version) before merging into master."
+            exit 1
+          fi
+          echo "✅ $TAG is a new version and will be released when this PR is merged."
