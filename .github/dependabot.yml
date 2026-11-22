@@ -1,3 +1,5 @@
+# Dependabot version updates: opens weekly PRs against `dev` (never `master`).
+# Updates are reviewed and merged on `dev` and reach `master` with the next release.
 version: 2
 updates:
   - package-ecosystem: "npm"
