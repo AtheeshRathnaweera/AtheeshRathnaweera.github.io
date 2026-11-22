@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://atheeshrathnaweera.github.io/sitemap.xml
+Sitemap: https://atheeshr.com/sitemap.xml

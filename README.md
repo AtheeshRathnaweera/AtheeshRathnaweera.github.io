@@ -1,69 +1,88 @@
-# React + TypeScript + Vite
+# Atheesh Rathnaweera - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal portfolio website, live at **[atheeshr.com](https://atheeshr.com)**.
 
-Currently, two official plugins are available:
+Built with React, TypeScript, and Vite, styled with Tailwind CSS and Flowbite, and animated with Framer Motion. Hosted on GitHub Pages behind Cloudflare.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Design inspired by [Brittany Chiang](https://brittanychiang.com).
 
-## Expanding the ESLint configuration
+## Tech stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Area      | Tools                                         |
+| --------- | --------------------------------------------- |
+| Framework | React 19, TypeScript, Vite                    |
+| Styling   | Tailwind CSS 4, Flowbite React                |
+| Animation | Framer Motion                                 |
+| Routing   | React Router                                  |
+| Quality   | ESLint, Prettier, Husky, lint-staged          |
+| Hosting   | GitHub Pages (GitHub Actions), Cloudflare DNS |
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting started
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Requires Node.js (LTS or newer) and npm.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install     # also installs git hooks and runs a vulnerability check
+npm run dev     # start the dev server at http://localhost:5173
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Command                            | Description                                              |
+| ---------------------------------- | -------------------------------------------------------- |
+| `npm run dev`                      | Start the Vite dev server                                |
+| `npm run build`                    | Type-check and build for production into `dist/`         |
+| `npm run preview`                  | Serve the production build locally                       |
+| `npm run lint`                     | Lint the project with ESLint                             |
+| `npm run format`                   | Format all files with Prettier                           |
+| `npm run check-vulnerabilities`    | Show vulnerable packages that need action                |
+| `npm run check-vulnerabilities:ci` | Fail on high/critical vulnerabilities in production deps |
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project structure
+
 ```
+public/            Static files served as-is (images, robots.txt, sitemap.xml, og-image)
+scripts/           Project tooling (vulnerability check)
+src/
+  animations/      Framer Motion variants
+  assets/          SVG icons
+  components/      Shared UI components (navbar, sidebars, section layout, footer)
+  contexts/        React context (app-wide state)
+  layouts/         Page layouts
+  pages/Home/      The home page and its sections (About, Experience, Work, Contact)
+  utils/           Helpers (e.g. experience duration formatting)
+index.html         HTML shell with SEO, Open Graph, and structured data
+```
+
+## Code quality and security
+
+Checks run automatically at each stage:
+
+| When                                  | What runs                                                                                                         |
+| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `npm install`                         | Vulnerability summary (warning only)                                                                              |
+| `git commit`                          | Prettier + ESLint on staged files (lint-staged)                                                                   |
+| `git push`                            | Vulnerability summary (warning only)                                                                              |
+| PRs into `dev`, pushes to `dev`       | **CI (dev)** - `build` (lint, Prettier, type-check, build) and `audit` (high/critical production vulnerabilities) |
+| PRs into `master`, pushes to `master` | **CI (prod)** - `build`, `audit`, and `version-bumped` (PRs only: fails if the version was already released)      |
+| Weekly                                | **CI (prod)** - `audit` of the live code on `master`                                                              |
+| Weekly                                | Dependabot opens dependency update PRs against **`dev`** only (never `master`)                                    |
+| New advisory published                | Dependabot alert email                                                                                            |
+
+## Branching and releases
+
+![Release flow: feature/* → PR → dev → PR → master → deploy + tag vX.Y.Z](docs/release-flow.svg)
+
+1. Create a feature branch from `dev`, then open a PR into `dev`.
+2. When ready to release, bump the version on `dev`:
+   `npm version patch --no-git-tag-version` (or `minor` / `major`), and commit it.
+3. Open a PR from `dev` into `master`. The **CI (prod)** `version-bumped` check fails the PR if the version was already released.
+4. Merge the PR. The **CD (prod)** workflow publishes the site to GitHub Pages, then automatically
+   tags the commit `vX.Y.Z` and creates a GitHub release with generated notes.
+5. Merge `master` back into `dev` so both branches share the merge commit.
+
+Dependabot update PRs target `dev`, so dependency updates are reviewed and merged there and only reach `master` with the next release.
+
+## Deployment
+
+The site deploys from `master` via [`.github/workflows/cd-prod.yml`](.github/workflows/cd-prod.yml). The custom domain is configured under **Settings → Pages**, with DNS managed in Cloudflare.

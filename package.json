@@ -1,7 +1,7 @@
 {
   "name": "my-portfolio",
   "private": true,
-  "version": "0.0.3",
+  "version": "0.0.5",
   "type": "module",
   "scripts": {
     "prepare": "husky",
@@ -9,7 +9,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postinstall": "node scripts/check-vulnerabilities.mjs --postinstall",
+    "check-vulnerabilities": "node scripts/check-vulnerabilities.mjs",
+    "check-vulnerabilities:ci": "node scripts/check-vulnerabilities.mjs --level=high --prod-only --strict"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json,css,md}": [
@@ -19,7 +22,7 @@
   },
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",
-    "flowbite-react": "^0.12.7",
+    "flowbite-react": "^0.12.17",
     "framer-motion": "^12.23.26",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -48,5 +51,8 @@
     "typescript-eslint": "^8.39.1",
     "vite": "^7.1.9",
     "vite-tsconfig-paths": "^5.1.4"
+  },
+  "overrides": {
+    "deepmerge-ts": "^8.0.0"
   }
 }

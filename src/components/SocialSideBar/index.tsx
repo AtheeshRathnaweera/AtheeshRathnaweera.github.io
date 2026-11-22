@@ -4,9 +4,14 @@ import { motion } from "framer-motion";
 
 const SocialSideBar = () => {
   return (
-    <motion.aside variants={slideInLeft} initial="hidden" animate="visible" className="hidden w-15 sm:flex flex-col items-center py-12 overflow-hidden fixed left-0 h-screen z-10 dark:text-white gap-6 justify-end sm:w-20 lg:w-30 xl:w-40 2xl:w-50">
+    <motion.aside
+      variants={slideInLeft}
+      initial="hidden"
+      animate="visible"
+      className="hidden w-15 sm:flex flex-col items-center py-12 overflow-hidden fixed left-0 h-screen z-10 dark:text-white gap-6 justify-end sm:w-20 lg:w-30 xl:w-40 2xl:w-50"
+    >
       <a
-        href="https://github.com/"
+        href="https://github.com/AtheeshRathnaweera"
         target="_blank"
         rel="noopener noreferrer"
         className="my-2 2xl:my-5"

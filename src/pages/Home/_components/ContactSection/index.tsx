@@ -17,7 +17,7 @@ const ContactSection = () => {
             window.open(
               "mailto:rathnaweeraatheesh72@gmail.com",
               "_blank",
-              "noopener,noreferrer"
+              "noopener,noreferrer",
             );
           }}
         >

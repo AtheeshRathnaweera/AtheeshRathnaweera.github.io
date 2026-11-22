@@ -20,24 +20,29 @@ const AboutSection = () => {
               mobile, and backend projects across different industries. From
               start-ups to larger organizations, I’ve built applications that
               are not only functional but also designed with the user in mind.
-              My main focus these days is creating intuitive, human-centered
-              digital experiences as a Full-Stack Software Engineer.
+              My main focus these days is leading teams to build intuitive,
+              human-centered digital experiences and scalable full-stack
+              applications on Microsoft Azure.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Here are a few technologies I’ve been working with recently:
             </p>
             <ul className="list-disc pl-6 text-gray-600 dark:text-gray-400 mb-4 space-y-0.5">
-              <li>JavaScript (ES6+) &amp; TypeScript</li>
+              <li>JavaScript (ES6+) &amp; TypeScript, Python</li>
               <li>React, Angular, Next.js</li>
               <li>Node.js, .NET, Spring Boot</li>
               <li>Flutter, React Native</li>
               <li>Airflow, DBT</li>
+              <li>Microsoft Azure, Azure DevOps</li>
+              <li>CI/CD, Terraform (IaC)</li>
             </ul>
           </div>
           <div className="justify-items-center px-4 pb-7 order-1 col-span-4 sm:order-1 sm:col-span-4 sm:justify-items-center sm:pb-5 sm:pr-1.75 md:order-1 md:col-span-2 lg:order-2 lg:col-span-1">
             <img
               src={mePicture}
               alt="Atheesh Rathnaweera"
+              width={1673}
+              height={1789}
               className="w-7/8 sm:w-1/2 md:w-5/6 xl:w-4/5 h-auto rounded-lg object-cover shadow-[0_8px_32px_rgba(0,0,0,0.15)] outline-2 outline-[#9ca3af] outline-offset-4 transition-[box-shadow,border-color] duration-300"
             />
           </div>

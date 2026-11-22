@@ -1,0 +1,81 @@
+name: CI (prod)
+
+# Checks for releases: dev → master PRs, pushes to master, and a weekly audit
+# of what is live. Deployment itself is in cd-prod.yml.
+#
+#   build           lint, formatting, type-check and build      (PRs, pushes)
+#   audit           high/critical production vulnerabilities     (PRs, pushes, weekly)
+#   version-bumped  package.json version not yet released        (PRs only)
+on:
+  pull_request:
+    branches: ["master"]
+  push:
+    branches: ["master"]
+  # Weekly run catches new advisories in the live site even when nobody is
+  # pushing code. A failed scheduled run emails the repo owner.
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Cancel an older run when new commits are pushed to the same PR/branch.
+concurrency:
+  group: ci-prod-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: lts/*
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: Lint
+        run: npm run lint
+      - name: Check formatting
+        run: npx prettier --check .
+      - name: Type-check and build
+        run: npm run build
+
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: lts/*
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: Full report (warning only)
+        run: node scripts/check-vulnerabilities.mjs --level=moderate
+      - name: Fail on high/critical in production dependencies
+        run: npm run check-vulnerabilities:ci
+
+  version-bumped:
+    # Fails if package.json still has an already-released version, so the
+    # release job in the deploy workflow always creates a new tag.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Check version is not already tagged
+        run: |
+          TAG="v$(node -p "require('./package.json').version")"
+          if git ls-remote --exit-code --tags origin "refs/tags/$TAG" >/dev/null; then
+            echo "::error file=package.json::$TAG is already released. Bump \"version\" in package.json (e.g. npm version patch --no-git-tag-version) before merging into master."
+            exit 1
+          fi
+          echo "✅ $TAG is a new version and will be released when this PR is merged."

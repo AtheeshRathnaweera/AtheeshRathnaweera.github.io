@@ -18,22 +18,33 @@ const ThreeITeamIntl = () => {
           </a>
         </div>
         <span className="block text-sm text-gray-600 dark:text-gray-400 mt-1">
-          Mar 2020 - Jul 2022 · 2 yrs 5 mos
+          Mar 2020 - Jul 2022 · 02 yrs 05 mos
         </span>
       </div>
       <div className="mt-4">
         <ul className="text-sm space-y-1 text-gray-600 list-disc list-inside dark:text-gray-400">
           <li>
-            Engaged as a project-based freelance developer, contributing to 5+ enterprise-level web applications.
+            Engaged as a project-based freelance developer, contributing to 5+
+            enterprise-level web applications.
           </li>
           <li>
-            Worked with JSP and Spring Boot (Thymeleaf), focusing on frontend development as well as backend integration and business logic handling.
+            Worked with JSP and Spring Boot (Thymeleaf), focusing on frontend
+            development as well as backend integration and business logic
+            handling.
           </li>
           <li>
-            Integrated frontend components with RESTful services, ensuring performance, reliability, and scalability.
+            Integrated frontend components with RESTful services, ensuring
+            performance, reliability, and scalability.
           </li>
-          <li>Delivered high-quality solutions within strict timelines, meeting enterprise standards and client expectations.</li>
-          <li>Gained exposure to cloud and serverless technologies, including AWS S3 for storage, AWS Lambda for backend processing, and Firebase Authentication for secure user access.</li>
+          <li>
+            Delivered high-quality solutions within strict timelines, meeting
+            enterprise standards and client expectations.
+          </li>
+          <li>
+            Gained exposure to cloud and serverless technologies, including AWS
+            S3 for storage, AWS Lambda for backend processing, and Firebase
+            Authentication for secure user access.
+          </li>
         </ul>
       </div>
     </DivContainer>

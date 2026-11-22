@@ -1,3 +1,7 @@
+/**
+ * Returns the duration between two dates as two-digit parts,
+ * e.g. "02 yrs 01 mos", "08 mos", "03 yrs". Zero parts are omitted.
+ */
 export const getDuration = (from: string, to: string | Date = new Date()) => {
   const start = new Date(from);
   const end = to === "Present" ? new Date() : new Date(to);
@@ -7,13 +11,9 @@ export const getDuration = (from: string, to: string | Date = new Date()) => {
     years--;
     months += 12;
   }
-  let yearsStr = "";
-  if (years > 0) {
-    yearsStr = years + " yr" + (years > 1 ? "s" : "") + " ";
-  }
-  let monthsStr = "";
-  if (months > 0) {
-    monthsStr = months + " mo" + (months > 1 ? "s" : "");
-  }
-  return (yearsStr + monthsStr).trim();
+  const pad = (n: number) => String(n).padStart(2, "0");
+  const parts: string[] = [];
+  if (years > 0) parts.push(`${pad(years)} yrs`);
+  if (months > 0) parts.push(`${pad(months)} mos`);
+  return parts.join(" ");
 };

@@ -40,7 +40,7 @@ const HeroSection = () => {
           variants={fadeIn}
         >
           I’m passionate about learning new technologies and writing clean,
-          maintainable code—I enjoy exploring random projects in my GitHub
+          maintainable code. I enjoy exploring random projects in my GitHub
           playground. Currently working as a Senior Software Engineer, I’m
           focused on creating human-centered products and growing my expertise
           in full-stack development.

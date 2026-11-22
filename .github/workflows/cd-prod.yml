@@ -1,9 +1,12 @@
-name: Build & Deploy (master)
+name: CD (prod)
+
+# Deploys master to GitHub Pages, then tags the deployed commit and creates a
+# GitHub release from the package.json version. Checks run in ci-prod.yml.
 
 on:
   # Triggers the workflow on push events but only for the "master" branch
   push:
-    branches: [ "master" ]
+    branches: ["master"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -16,7 +19,7 @@ permissions:
 
 # Allow one concurrent deployment
 concurrency:
-  group: 'pages'
+  group: "pages"
   cancel-in-progress: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -34,7 +37,7 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: lts/*
-          cache: 'npm'
+          cache: "npm"
       - name: Install dependencies
         run: npm ci
       - name: Build
@@ -45,7 +48,32 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           # Upload dist folder
-          path: './dist'
+          path: "./dist"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # Tags the deployed commit and creates a GitHub release from the
+  # package.json version. Runs only if the deploy succeeded.
+  release:
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # create tags and releases
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Create release if this version is new
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="v$(node -p "require('./package.json').version")"
+          if gh release view "$TAG" >/dev/null 2>&1 || git ls-remote --exit-code --tags origin "refs/tags/$TAG" >/dev/null; then
+            echo "::notice::$TAG already exists — skipping release. Bump the version in package.json to release."
+            exit 0
+          fi
+          gh release create "$TAG" \
+            --target "$GITHUB_SHA" \
+            --title "$TAG" \
+            --generate-notes
+          echo "::notice::Released $TAG"

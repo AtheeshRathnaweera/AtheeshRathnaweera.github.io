@@ -3,9 +3,9 @@
 
 /* Tailwind base */
 @import "tailwindcss";
+@import "flowbite-react/plugin/tailwindcss";
 
 /* Flowbite plugin */
-@plugin "flowbite-react/plugin/tailwindcss";
 @source "../.flowbite-react/class-list.json";
 @plugin "flowbite-typography";
 /* @custom-variant dark (&:where(.dark, .dark *)); */

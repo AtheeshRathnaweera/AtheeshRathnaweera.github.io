@@ -20,7 +20,7 @@ const EmailSideBar = () => {
         rathnaweeraatheesh72@gmail.com
       </span>
       <a
-        href="https://github.com/"
+        href="https://github.com/AtheeshRathnaweera"
         target="_blank"
         rel="noopener noreferrer"
         className="block sm:hidden mt-8 mb-4"
